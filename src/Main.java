@@ -10,6 +10,8 @@ public class Main {
         account.withdrawlMoney(10000);
         account.calculateInterest();
 
+        account.setPassword("Manas@1999", "Google@199");
+
     }
 
 

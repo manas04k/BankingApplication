@@ -1,10 +1,15 @@
 package src;
 
 public class ManasBank implements Bank{
-    int accountNo;
-    String name;
-    double balance;
-    double interestRate;
+
+
+    private int accountNo;
+    private String name;
+    private double balance;
+    private double interestRate;
+    private String password = "Google@1999";
+
+
 
     public ManasBank(int accountNo, String name, int balance, double interestRate) {
         this.accountNo = accountNo;
@@ -13,6 +18,21 @@ public class ManasBank implements Bank{
         this.interestRate = interestRate;
     }
 
+    public int getAccountNo() {
+        return accountNo;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
+    public void setInterestRate(double interestRate) {
+        this.interestRate = interestRate;
+    }
 
     @Override
     public void addMoney(double money) {
@@ -46,5 +66,15 @@ public class ManasBank implements Bank{
     public void calculateInterest() {
         System.out.println("Interest : " + balance*interestRate/100);
 
+    }
+
+    public void setPassword(String newPassword, String oldPassword){
+        if(oldPassword==this.password){
+            this.password = newPassword;
+            System.out.println("Your Password Changed Successfully");
+        }
+        else{
+            System.out.println("Wrong Old Password");
+        }
     }
 }
